@@ -1,0 +1,17 @@
+.classpath
+.project
+.settings/
+target/
+web-app/i18n/
+web-app/help/core/
+web-app/WEB-INF/grails-app/
+*.log
+
+# temp files
+*.swp
+*.swo
+*.orig
+
+# Temp dir for random tasks
+temp/
+
