@@ -2,9 +2,9 @@ package frontlinesms.flashiermessages
 
 class FlashierMessagesTagLib {
 	static namespace = 'flash'
+	def oneTimeDataService
 
         def message = { att ->
-		println "############# FlashierMessagesTaglib.message() Called ##############"
                 def msg = oneTimeDataService.getOneTimeData('message', request)?.text
                 if (!msg) return
                 if(!att?.textOnly) {
