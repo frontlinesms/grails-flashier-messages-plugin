@@ -7,7 +7,7 @@ class FlashierMessageService {
 	def oneTimeDataService	
 	def setValue(key, value) {
 		println "########## setValue ##########"
-		oneTimeDataService.store(getRequest(), OTDS_FLASH_VARIABLE_KEY, { "$key" = value } )
+		oneTimeDataService.store(getRequest(), OTDS_FLASH_VARIABLE_KEY, { this[key] = value } )
 	}
 
 	def getValue(key) {
