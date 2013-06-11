@@ -25,9 +25,14 @@ class GrailsFlashierMessagesGrailsPlugin {
         void applyDynamicMethods(application) {
                 def svc = application.mainContext.oneTimeDataService
 		application.controllerClasses.each { cc ->
-			cc.clazz.metaClass.setFlashMessage = { message ->
-				delegate.oneTimeData('message') { text = message }
+			cc.clazz.metaClass.getFlash = { ->
+				println "########## the getFlash override #########"
+				return application.mainContext.flashierMessageService	
 			}
+		}
+		application.mainContext.flashierMessageService.clazz.metaClass.propertyMissing = { String name, value ->
+			println "########## the metaclass stuff ##########"
+			delegate.setValue(name, value)
 		}
         }
 }
