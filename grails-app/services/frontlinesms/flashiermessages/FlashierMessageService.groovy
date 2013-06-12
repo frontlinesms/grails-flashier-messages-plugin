@@ -10,7 +10,7 @@ class FlashierMessageService {
 	}
 
 	def getValue(key) {
-		return oneTimeDataService.getOneTimeData(OTDS_FLASH_VARIABLE_KEY, getRequest())?.key
+		oneTimeDataService.getOneTimeData(OTDS_FLASH_VARIABLE_KEY, getRequest())?."$key"
 	}
 
 	private def getRequest() {
