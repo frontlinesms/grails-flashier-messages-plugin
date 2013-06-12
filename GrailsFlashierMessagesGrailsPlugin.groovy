@@ -30,10 +30,6 @@ class GrailsFlashierMessagesGrailsPlugin {
 				return application.mainContext.flashierMessageService	
 			}
 		}
-		application.mainContext.flashierMessageService.clazz.metaClass.propertyMissing = { String name, value ->
-			println "########## the metaclass stuff ##########"
-			delegate.setValue(name, value)
-		}
         }
 }
 

@@ -6,16 +6,18 @@ class FlashierMessageService {
 	private static final String OTDS_FLASH_VARIABLE_KEY = "flashy"
 	def oneTimeDataService	
 	def setValue(key, value) {
-		println "########## setValue ##########"
-		oneTimeDataService.store(getRequest(), OTDS_FLASH_VARIABLE_KEY, { this[key] = value } )
+		oneTimeDataService.store(getRequest(), OTDS_FLASH_VARIABLE_KEY, { delegate."$key" = value })
 	}
 
 	def getValue(key) {
-		println "########## getValue ##########"
-		oneTimeDataService.getOneTimeData(key, getRequest())
+		return oneTimeDataService.getOneTimeData(OTDS_FLASH_VARIABLE_KEY, getRequest())?.key
 	}
 
 	private def getRequest() {
 		WebUtils.retrieveGrailsWebRequest().getCurrentRequest()
+	}
+
+	def propertyMissing(String name, value) {
+		setValue(name, value)
 	}
 }
