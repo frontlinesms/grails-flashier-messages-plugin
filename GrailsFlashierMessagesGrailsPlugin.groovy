@@ -26,7 +26,6 @@ class GrailsFlashierMessagesGrailsPlugin {
                 def svc = application.mainContext.oneTimeDataService
 		application.controllerClasses.each { cc ->
 			cc.clazz.metaClass.getFlash = { ->
-				println "########## the getFlash override #########"
 				return application.mainContext.flashierMessageService	
 			}
 		}
