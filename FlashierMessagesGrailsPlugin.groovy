@@ -1,4 +1,4 @@
-class GrailsFlashierMessagesGrailsPlugin {
+class FlashierMessagesGrailsPlugin {
 	def version = '1.0-SNAPSHOT'
 	def grailsVersion = "2.0 > *"
 	def dependsOn = [:]
@@ -12,7 +12,7 @@ class GrailsFlashierMessagesGrailsPlugin {
 	def description = 'Alternative to flash.message, that works between redirects and across multiple browser windows'
 	def documentation = "http://grails.org/plugin/grails-flashier-messages"
 	def license = "APACHE"
-	def organization = [name:"FrontlineSMS", url:"http://www.frontlinesms.com/" ]
+	def organization = [name:"FrontlineSMS", url:"http://www.frontlinesms.com/"]
 
         def doWithDynamicMethods = { ctx ->
 		applyDynamicMethods(application)
@@ -26,7 +26,7 @@ class GrailsFlashierMessagesGrailsPlugin {
                 def svc = application.mainContext.oneTimeDataService
 		application.controllerClasses.each { cc ->
 			cc.clazz.metaClass.getFlash = { ->
-				return application.mainContext.flashierMessageService	
+				return application.mainContext.flashierMessagesService
 			}
 		}
         }

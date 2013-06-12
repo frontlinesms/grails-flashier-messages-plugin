@@ -2,10 +2,10 @@ package frontlinesms.flashiermessages
 
 class FlashierMessagesTagLib {
 	static namespace = 'flash'
-	def flashierMessageService
+	def flashierMessagesService
 
 	def show = { att ->
-                def msg = flashierMessageService.getValue(att.field)
+                def msg = flashierMessagesService.getValue(att.field)
                 if (!msg) return
                 if(!att?.textOnly) {
                         def divClasses= att?.customClasses?: "flash ${att.field}"
