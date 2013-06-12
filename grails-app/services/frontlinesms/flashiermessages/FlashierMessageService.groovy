@@ -20,4 +20,9 @@ class FlashierMessageService {
 	def propertyMissing(String name, value) {
 		setValue(name, value)
 	}
+
+
+	def propertyMissing(String name) {
+		getValue(name)
+	}
 }
