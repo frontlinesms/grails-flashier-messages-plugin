@@ -3,7 +3,7 @@ package frontlinesms.flashiermessages
 import org.codehaus.groovy.grails.web.util.WebUtils
 
 class FlashierMessageService {
-	private static final String OTDS_FLASH_VARIABLE_KEY = "flashy"
+	public static final String OTDS_FLASH_VARIABLE_KEY = "flashy"
 	def oneTimeDataService	
 	def setValue(key, value) {
 		oneTimeDataService.store(getRequest(), OTDS_FLASH_VARIABLE_KEY, { delegate."$key" = value })
