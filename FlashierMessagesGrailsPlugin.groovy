@@ -1,5 +1,5 @@
 class FlashierMessagesGrailsPlugin {
-	def version = '1.0-SNAPSHOT'
+	def version = '1.0'
 	def grailsVersion = "2.0 > *"
 	def dependsOn = [:]
 	def pluginExcludes = [
@@ -9,7 +9,7 @@ class FlashierMessagesGrailsPlugin {
 	def title = 'Grails Flashier Messages Plugin'
 	def author = 'Sitati Kituyi'
 	def authorEmail = ""
-	def description = 'Alternative to flash.message, that works between redirects and across multiple browser windows'
+	def description = 'Alternative to the grails controller flash object, which works between redirects and across multiple browser windows'
 	def documentation = "http://grails.org/plugin/grails-flashier-messages"
 	def license = "APACHE"
 	def organization = [name:"FrontlineSMS", url:"http://www.frontlinesms.com/"]
