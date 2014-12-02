@@ -1,5 +1,5 @@
 class FlashierMessagesGrailsPlugin {
-	def version = '1.0'
+	def version = '1.1-SNAPSHOT'
 	def grailsVersion = "2.0 > *"
 	def dependsOn = [:]
 	def pluginExcludes = [

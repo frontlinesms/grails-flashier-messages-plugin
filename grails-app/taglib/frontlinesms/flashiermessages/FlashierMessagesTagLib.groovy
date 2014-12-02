@@ -22,4 +22,11 @@ class FlashierMessagesTagLib {
 	def message = { att->
 		out << show(att << [field: 'message'])
 	}
+	
+	def withMessage= { att, body ->
+		def msg = flashierMessagesService.getValue('message')
+		if (msg){
+			out << body(msg)
+		}
+	}
 }
