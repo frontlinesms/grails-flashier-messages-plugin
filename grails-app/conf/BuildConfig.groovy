@@ -25,6 +25,6 @@ grails.project.dependency.resolution = {
 		}
 		test ':hibernate:2.2.1', ':tomcat:2.2.1'
 
-		compile ":one-time-data:1.1-frontlinesms"
+		compile ":one-time-data:1.2-frontlinesms"
 	}
 }
